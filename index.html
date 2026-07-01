@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BudgetFlow Pro</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="background-blur"></div>
+<div class="container">
+<aside class="sidebar">
+<div class="logo"><i class="fa-solid fa-wallet"></i><span>BudgetFlow Pro</span></div>
+<ul class="nav">
+<li class="active"><i class="fa-solid fa-chart-line"></i> Dashboard</li>
+<li><i class="fa-solid fa-calculator"></i> Budget</li>
+<li><i class="fa-solid fa-money-bill-transfer"></i> Cash Flow</li>
+<li><i class="fa-solid fa-chart-pie"></i> Analytics</li>
+</ul>
+</aside>
+
+<main>
+<header>
+<div>
+<h1>Budget & Cash Flow Calculator</h1>
+<p>Simple personal finance dashboard</p>
+</div>
+<div class="header-buttons">
+<button id="themeBtn"><i class="fa-solid fa-moon"></i></button>
+<button id="resetBtn"><i class="fa-solid fa-rotate-left"></i> Reset</button>
+</div>
+</header>
+
+<section class="cards">
+<div class="card income"><h3>Income</h3><h2 id="incomeDisplay">₱0.00</h2></div>
+<div class="card expense"><h3>Expenses</h3><h2 id="expenseDisplay">₱0.00</h2></div>
+<div class="card balance"><h3>Remaining</h3><h2 id="balanceDisplay">₱0.00</h2></div>
+<div class="card savings"><h3>Savings</h3><h2 id="savingRate">0%</h2></div>
+</section>
+
+<section class="glass">
+<h2>Budget Calculator</h2>
+<div class="grid">
+<div><label>Monthly Income</label><input id="income" type="number"></div>
+<div><label>Fixed Expenses</label><input id="fixed" type="number"></div>
+<div><label>Variable Expenses</label><input id="variable" type="number"></div>
+<div><label>Savings Goal</label><input id="goal" type="number"></div>
+</div>
+<button id="calculateBudget">Calculate Budget</button>
+</section>
+
+<section class="glass">
+<h2>Cash Flow Calculator</h2>
+<div class="grid">
+<div><label>Opening Balance</label><input id="opening" type="number"></div>
+<div><label>Cash In</label><input id="cashIn" type="number"></div>
+<div><label>Cash Out</label><input id="cashOut" type="number"></div>
+</div>
+<button id="calculateCash">Calculate Cash Flow</button>
+</section>
+
+<section class="cards">
+<div class="card"><h3>Daily Budget</h3><h2 id="dailyBudget">₱0.00</h2></div>
+<div class="card"><h3>Ending Balance</h3><h2 id="endingBalance">₱0.00</h2></div>
+<div class="card"><h3>Cash Flow</h3><h2 id="cashFlow">₱0.00</h2></div>
+<div class="card"><h3>Budget Health</h3><h2 id="health">-</h2></div>
+</section>
+
+<section class="charts">
+<div class="glass"><h2>Budget Allocation</h2><canvas id="budgetChart"></canvas></div>
+<div class="glass"><h2>Cash Flow</h2><canvas id="cashChart"></canvas></div>
+</section>
+
+<section class="glass">
+<h2>Financial Analysis</h2>
+<ul id="analysis">
+<li>Enter values and click Calculate.</li>
+</ul>
+</section>
+
+<section class="export-buttons">
+<button id="saveBtn">Save</button>
+<button id="csvBtn">Export CSV</button>
+<button id="printBtn">Print</button>
+</section>
+
+</main>
+</div>
+<script src="script.js"></script>
+</body>
+</html>
