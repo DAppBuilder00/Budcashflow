@@ -1,0 +1,305 @@
+/* ==========================================================
+   BudgetFlow Pro
+   Premium Glassmorphism Dashboard
+   Author: Your Name
+   Version: 1.0
+========================================================== */
+
+/* ==========================================================
+   CSS VARIABLES
+========================================================== */
+
+:root {
+    --bg: #0b1220;
+
+    --glass: rgba(255, 255, 255, 0.08);
+    --border: rgba(255, 255, 255, 0.12);
+
+    --text: #eef4ff;
+    --muted: #a8b3cf;
+
+    --primary: #4f8cff;
+    --success: #22c55e;
+    --danger: #ef4444;
+    --warning: #f59e0b;
+
+    --radius: 22px;
+
+    --shadow: 0 20px 45px rgba(0, 0, 0, .3);
+}
+
+/* ==========================================================
+   GLOBAL RESET
+========================================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+/* ==========================================================
+   BODY
+========================================================== */
+
+body {
+
+    min-height: 100vh;
+
+    color: var(--text);
+
+    background:
+        linear-gradient(
+            135deg,
+            #0b1220,
+            #111827,
+            #1e293b
+        );
+
+}
+
+/* ==========================================================
+   LAYOUT
+========================================================== */
+
+.container {
+
+    display: flex;
+
+}
+
+main {
+
+    flex: 1;
+
+    margin-left: 260px;
+
+    padding: 35px;
+
+}
+
+/* ==========================================================
+   SIDEBAR
+========================================================== */
+
+.sidebar {
+
+    width: 260px;
+
+    height: 100vh;
+
+    position: fixed;
+
+    padding: 28px;
+
+    background: rgba(15, 23, 42, .55);
+
+    backdrop-filter: blur(18px);
+
+    border-right: 1px solid var(--border);
+
+}
+
+/* ==========================================================
+   GLASS COMPONENTS
+========================================================== */
+
+.card,
+.glass {
+
+    background: var(--glass);
+
+    backdrop-filter: blur(18px);
+
+    border: 1px solid var(--border);
+
+    border-radius: var(--radius);
+
+    box-shadow: var(--shadow);
+
+}
+
+/* ==========================================================
+   DASHBOARD CARDS
+========================================================== */
+
+.cards {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(auto-fit, minmax(220px, 1fr));
+
+    gap: 20px;
+
+}
+
+.card {
+
+    padding: 24px;
+
+}
+
+.income {
+
+    border-left: 5px solid var(--success);
+
+}
+
+.expense {
+
+    border-left: 5px solid var(--danger);
+
+}
+
+.balance {
+
+    border-left: 5px solid var(--primary);
+
+}
+
+.savings {
+
+    border-left: 5px solid var(--warning);
+
+}
+
+/* ==========================================================
+   GLASS PANELS
+========================================================== */
+
+.glass {
+
+    padding: 28px;
+
+    margin: 24px 0;
+
+}
+
+/* ==========================================================
+   FORM GRID
+========================================================== */
+
+.grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(auto-fit, minmax(220px, 1fr));
+
+    gap: 18px;
+
+}
+
+/* ==========================================================
+   INPUTS
+========================================================== */
+
+input {
+
+    width: 100%;
+
+    padding: 14px;
+
+    border-radius: 14px;
+
+    border: 1px solid var(--border);
+
+    background: rgba(255, 255, 255, .05);
+
+    color: white;
+
+}
+
+/* ==========================================================
+   BUTTONS
+========================================================== */
+
+button {
+
+    padding: 13px 18px;
+
+    border: none;
+
+    border-radius: 14px;
+
+    cursor: pointer;
+
+    color: white;
+
+    background:
+        linear-gradient(
+            135deg,
+            #4f8cff,
+            #2563eb
+        );
+
+}
+
+/* ==========================================================
+   CHARTS
+========================================================== */
+
+.charts {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(auto-fit, minmax(350px, 1fr));
+
+    gap: 20px;
+
+}
+
+/* ==========================================================
+   EXPORT BUTTONS
+========================================================== */
+
+.export-buttons {
+
+    display: flex;
+
+    gap: 15px;
+
+    flex-wrap: wrap;
+
+}
+
+/* ==========================================================
+   RESPONSIVE DESIGN
+========================================================== */
+
+@media (max-width: 950px) {
+
+    .container {
+
+        flex-direction: column;
+
+    }
+
+    .sidebar {
+
+        width: 100%;
+
+        height: auto;
+
+        position: relative;
+
+    }
+
+    main {
+
+        margin-left: 0;
+
+    }
+
+    .cards,
+    .charts,
+    .grid {
+
+        grid-template-columns: 1fr;
+
+    }
+
+}
